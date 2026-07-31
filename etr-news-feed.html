@@ -42,34 +42,21 @@
 
   #etr-feed-root * { box-sizing: border-box; }
 
-  .etr-head { margin: 4px 4px 18px; }
-  .etr-lead {
-    font-size: clamp(18px, 2.4vw, 21px); line-height: 1.45; font-weight: 700;
-    color: var(--etr-ink); margin: 0 0 12px; max-width: 62ch;
-  }
-  .etr-note {
-    font-size: 15px; line-height: 1.55; color: #33291f;
-    margin: 0 0 10px; max-width: 62ch;
-  }
-  .etr-cheers {
-    font-size: 15px; font-weight: 800; color: var(--etr-accent);
-    margin: 0; letter-spacing: .01em;
-  }
   .etr-bar {
     display:flex; align-items:center; justify-content:space-between;
-    gap:14px; flex-wrap:wrap; margin: 4px 4px 20px;
-    padding-top: 16px; border-top: 2px solid rgba(32,25,19,.22);
+    gap:14px; flex-wrap:wrap; margin: 0 4px 22px;
+    padding-top: 18px; border-top: 2px solid rgba(32,25,19,.22);
   }
   .etr-bar-label {
-    font-size:11px; letter-spacing:.18em; text-transform:uppercase;
+    font-size:13px; letter-spacing:.18em; text-transform:uppercase;
     font-weight:700; color:#33291f;
   }
 
-  .etr-filters { display:flex; gap:8px; flex-wrap:wrap; }
+  .etr-filters { display:flex; gap:9px; flex-wrap:wrap; }
   .etr-chip {
     border:1px solid var(--etr-line); background:var(--etr-card);
-    color: var(--etr-muted); font-size:12.5px; font-weight:600;
-    padding:6px 12px; border-radius:999px; cursor:pointer;
+    color: var(--etr-muted); font-size:14.5px; font-weight:600;
+    padding:9px 18px; border-radius:999px; cursor:pointer;
     transition:.15s; font-family:inherit;
   }
   .etr-chip:hover { border-color: var(--etr-accent); color: var(--etr-ink); }
@@ -192,11 +179,6 @@
 
   function render() {
     root.innerHTML = ''
-      + '<div class="etr-head">'
-      +   '<p class="etr-lead">We scour the internet and social media for the latest news, and link it here so you can get it all in one place. You\'re welcome!?</p>'
-      +   '<p class="etr-note">The podcast and newsletter are where you get our opinions, commentary, and reviews.</p>'
-      +   '<p class="etr-cheers">Cheers!</p>'
-      + '</div>'
       + '<div class="etr-bar">'
       +   '<span class="etr-bar-label">Browse</span>'
       +   '<div class="etr-filters" id="etr-filters">'
