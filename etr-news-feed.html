@@ -1,0 +1,268 @@
+<!-- ============================================================
+     EAT. TALK. REPEAT. — Vegas Food News Feed
+     Drop-in widget for a Squarespace Code Block.
+
+     HOW IT WORKS
+     ------------
+     This whole file goes inside ONE Squarespace Code Block on the
+     page where you want the feed. It reads a JSON list of news
+     items from FEED_URL and renders them as a running feed.
+
+     To go live: set FEED_URL below to wherever your approved
+     items get published (the feed.json that the scheduled task
+     writes). Until then it falls back to SAMPLE_ITEMS so you can
+     see exactly how it looks.
+
+     CATEGORIES: News (umbrella) · Openings · Closings ·
+     Spilled Tea · Events. Items tagged "Openings" or "Closings"
+     also appear under the "News" filter automatically.
+     ============================================================ -->
+
+<div id="etr-feed-root"></div>
+
+<style>
+  #etr-feed-root {
+    --etr-bg:        transparent;
+    --etr-card:      #fbf3e4;   /* warm cream cards, tied to the site's header band */
+    --etr-ink:       #201913;
+    --etr-muted:     #6f655c;
+    --etr-line:      #e6dcc4;
+    --etr-accent:    #c1552f;   /* ETR rust orange (matches the site) */
+    --etr-tea:       #a5468a;   /* accent for Spilled Tea items */
+    --etr-radius:    16px;
+    --etr-font:      -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+    font-family: var(--etr-font);
+    color: var(--etr-ink);
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 8px 0 48px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #etr-feed-root * { box-sizing: border-box; }
+
+  .etr-head { margin: 4px 4px 18px; }
+  .etr-lead {
+    font-size: clamp(18px, 2.4vw, 21px); line-height: 1.45; font-weight: 700;
+    color: var(--etr-ink); margin: 0 0 12px; max-width: 62ch;
+  }
+  .etr-note {
+    font-size: 15px; line-height: 1.55; color: #33291f;
+    margin: 0 0 10px; max-width: 62ch;
+  }
+  .etr-cheers {
+    font-size: 15px; font-weight: 800; color: var(--etr-accent);
+    margin: 0; letter-spacing: .01em;
+  }
+  .etr-bar {
+    display:flex; align-items:center; justify-content:space-between;
+    gap:14px; flex-wrap:wrap; margin: 4px 4px 20px;
+    padding-top: 16px; border-top: 2px solid rgba(32,25,19,.22);
+  }
+  .etr-bar-label {
+    font-size:11px; letter-spacing:.18em; text-transform:uppercase;
+    font-weight:700; color:#33291f;
+  }
+
+  .etr-filters { display:flex; gap:8px; flex-wrap:wrap; }
+  .etr-chip {
+    border:1px solid var(--etr-line); background:var(--etr-card);
+    color: var(--etr-muted); font-size:12.5px; font-weight:600;
+    padding:6px 12px; border-radius:999px; cursor:pointer;
+    transition:.15s; font-family:inherit;
+  }
+  .etr-chip:hover { border-color: var(--etr-accent); color: var(--etr-ink); }
+  .etr-chip[aria-pressed="true"] {
+    background: var(--etr-accent); color:#fff; border-color: var(--etr-accent);
+  }
+
+  .etr-list { display:flex; flex-direction:column; gap:14px; }
+
+  .etr-card {
+    display:grid; grid-template-columns: 168px 1fr; gap:0;
+    background: var(--etr-card); border:1px solid var(--etr-line);
+    border-radius: var(--etr-radius); overflow:hidden;
+    text-decoration:none; color:inherit;
+    transition: transform .15s ease, box-shadow .15s ease, border-color .15s;
+  }
+  .etr-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(26,22,20,.10);
+    border-color: #ddd4cc;
+  }
+  .etr-thumbwrap { background:#f3efeb; min-height:132px; position:relative; }
+  .etr-thumbwrap img {
+    position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover; display:block;
+  }
+  .etr-body { padding:16px 18px; display:flex; flex-direction:column; gap:8px; }
+  .etr-meta { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; }
+  .etr-tag {
+    font-weight:700; text-transform:uppercase; letter-spacing:.06em;
+    font-size:10.5px; padding:3px 8px; border-radius:6px;
+    background: rgba(193,85,47,.12); color: var(--etr-accent);
+  }
+  .etr-tag.tea { background: rgba(165,70,138,.14); color: var(--etr-tea); }
+  .etr-source { color: var(--etr-muted); }
+  .etr-dot { color: var(--etr-line); }
+  #etr-feed-root .etr-h { font-family: var(--etr-font); font-size:17px; line-height:1.34; font-weight:800; color: var(--etr-ink); margin:0; }
+  .etr-blurb { font-size:14px; line-height:1.5; color:var(--etr-muted); margin:0;
+    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .etr-go { margin-top:2px; font-size:12.5px; font-weight:700; color:var(--etr-accent); }
+
+  .etr-more-wrap { text-align:center; margin-top:22px; }
+  .etr-more {
+    border:1px solid var(--etr-line); background:var(--etr-card); color:var(--etr-ink);
+    font-family:inherit; font-weight:700; font-size:13px; padding:11px 22px;
+    border-radius:999px; cursor:pointer; transition:.15s;
+  }
+  .etr-more:hover { border-color: var(--etr-accent); color: var(--etr-accent); }
+
+  .etr-empty { text-align:center; color:var(--etr-muted); padding:40px 0; font-size:14px; }
+
+  @media (max-width: 560px) {
+    .etr-card { grid-template-columns: 1fr; }
+    .etr-thumbwrap { min-height:180px; }
+  }
+
+  /* Note: no dark-mode override — the widget stays light on the site's blue
+     section regardless of the visitor's system dark-mode setting. */
+</style>
+
+<script>
+(function () {
+  // ====== CONFIG ======
+  var FEED_URL  = "https://raw.githubusercontent.com/ashwatkins44/etr-newsfeed/main/feed.json";
+  var PAGE_SIZE = 12;   // items rendered per batch ("Load more" adds another batch)
+
+  // Fixed taxonomy. "News" is an umbrella that also matches Openings + Closings.
+  var TAXONOMY = ["All", "News", "Openings", "Closings", "Spilled Tea", "Events"];
+  function matches(item, cat) {
+    if (cat === "All")  return true;
+    if (cat === "News") return ["News", "Openings", "Closings"].indexOf(item.category) !== -1;
+    return item.category === cat;
+  }
+
+  var root = document.getElementById("etr-feed-root");
+  var state = { items: [], cat: "All", shown: 0 };
+
+  function fmtDate(iso) {
+    try { return new Date(iso).toLocaleDateString(undefined, { month:"short", day:"numeric" }); }
+    catch (e) { return ""; }
+  }
+
+  function cardHTML(it) {
+    var teaClass = it.category === "Spilled Tea" ? " tea" : "";
+    var img = it.image
+      ? '<img loading="lazy" src="' + it.image + '" alt="">'
+      : '';
+    return ''
+      + '<a class="etr-card" href="' + (it.url||'#') + '" target="_blank" rel="noopener">'
+      +   '<div class="etr-thumbwrap">' + img + '</div>'
+      +   '<div class="etr-body">'
+      +     '<div class="etr-meta">'
+      +       (it.category ? '<span class="etr-tag' + teaClass + '">' + it.category + '</span>' : '')
+      +       '<span class="etr-source">' + (it.source||'') + '</span>'
+      +       (it.date ? '<span class="etr-dot">&bull;</span><span class="etr-source">' + fmtDate(it.date) + '</span>' : '')
+      +     '</div>'
+      +     '<h3 class="etr-h">' + (it.title||'') + '</h3>'
+      +     (it.blurb ? '<p class="etr-blurb">' + it.blurb + '</p>' : '')
+      +     '<span class="etr-go">Read &rarr;</span>'
+      +   '</div>'
+      + '</a>';
+  }
+
+  function draw() {
+    var pool = state.items.filter(function (it) { return matches(it, state.cat); });
+    var listEl = document.getElementById("etr-list");
+    var moreWrap = document.getElementById("etr-more-wrap");
+
+    if (!pool.length) {
+      listEl.innerHTML = '<div class="etr-empty">No items yet &mdash; approved links will appear here.</div>';
+      moreWrap.innerHTML = "";
+      return;
+    }
+    var slice = pool.slice(0, state.shown);
+    listEl.innerHTML = slice.map(cardHTML).join('');
+    moreWrap.innerHTML = (state.shown < pool.length)
+      ? '<button class="etr-more" id="etr-more-btn">Load more (' + (pool.length - state.shown) + ')</button>'
+      : '';
+  }
+
+  function render() {
+    root.innerHTML = ''
+      + '<div class="etr-head">'
+      +   '<p class="etr-lead">We scour the internet and social media for the latest news, and link it here so you can get it all in one place. You\'re welcome!?</p>'
+      +   '<p class="etr-note">The podcast and newsletter are where you get our opinions, commentary, and reviews.</p>'
+      +   '<p class="etr-cheers">Cheers!</p>'
+      + '</div>'
+      + '<div class="etr-bar">'
+      +   '<span class="etr-bar-label">Browse</span>'
+      +   '<div class="etr-filters" id="etr-filters">'
+      +     TAXONOMY.map(function (c, i) {
+              return '<button class="etr-chip" data-cat="' + c + '" aria-pressed="' + (i===0) + '">' + c + '</button>';
+            }).join('')
+      +   '</div>'
+      + '</div>'
+      + '<div class="etr-list" id="etr-list"></div>'
+      + '<div class="etr-more-wrap" id="etr-more-wrap"></div>';
+
+    document.getElementById("etr-filters").addEventListener("click", function (e) {
+      var btn = e.target.closest(".etr-chip"); if (!btn) return;
+      [].forEach.call(this.querySelectorAll(".etr-chip"), function (b) { b.setAttribute("aria-pressed", b===btn); });
+      state.cat = btn.getAttribute("data-cat");
+      state.shown = PAGE_SIZE;
+      draw();
+    });
+
+    root.addEventListener("click", function (e) {
+      if (e.target && e.target.id === "etr-more-btn") { state.shown += PAGE_SIZE; draw(); }
+    });
+
+    state.shown = PAGE_SIZE;
+    draw();
+  }
+
+  function boot() {
+    if (FEED_URL) {
+      // Live mode: always show the real feed (empty -> friendly empty state).
+      // Sample items are only used in preview (when FEED_URL is blank).
+      fetch(FEED_URL, { cache: "no-store" }).then(function (r) { return r.json(); })
+        .then(function (data) {
+          state.items = Array.isArray(data) ? data : (data.items || []);
+          render();
+        })
+        .catch(function () { state.items = []; render(); });
+    } else {
+      state.items = SAMPLE_ITEMS; render();
+    }
+  }
+
+  // ====== SAMPLE DATA (remove once FEED_URL is live) ======
+  var SAMPLE_ITEMS = [
+    { title:"Michelin-starred chef to open a late-night noodle counter on Spring Mountain",
+      source:"Eater Vegas", category:"Openings", date:"2026-07-29",
+      blurb:"A 14-seat spot focused on hand-pulled biang biang noodles, opening in the former ramen space.",
+      url:"#", image:"https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&q=60" },
+    { title:"Beloved off-Strip taqueria closing after 12 years — owners cite lease dispute",
+      source:"@vegasfoodie (IG)", category:"Closings", date:"2026-07-28",
+      blurb:"The family says a final weekend of service is planned before the doors close for good.",
+      url:"#", image:"https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=60" },
+    { title:"Downtown night market returns for summer with 40+ local vendors",
+      source:"Las Vegas Weekly", category:"Events", date:"2026-07-27",
+      blurb:"Every Friday through September in the Arts District — birria, boba, and a new dessert alley.",
+      url:"#", image:"https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=60" },
+    { title:"James Beard semifinalist list drops — three Vegas names make the cut",
+      source:"Review-Journal", category:"News", date:"2026-07-25",
+      blurb:"Two chefs and one bar program earned nods in this year's regional categories.",
+      url:"#", image:"https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=60" },
+    { title:"Rumor mill: a certain celebrity steakhouse may be eyeing a second valley location",
+      source:"Slack tip", category:"Spilled Tea", date:"2026-07-24",
+      blurb:"Unconfirmed, but permits filed under a familiar LLC suggest something's cooking in Summerlin.",
+      url:"#", image:"https://images.unsplash.com/photo-1600891964092-4316c288032e?w=400&q=60" }
+  ];
+
+  boot();
+})();
+</script>
