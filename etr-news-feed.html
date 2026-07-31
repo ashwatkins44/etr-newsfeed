@@ -142,7 +142,7 @@
   function cardHTML(it) {
     var teaClass = it.category === "Spilled Tea" ? " tea" : "";
     var img = it.image
-      ? '<img loading="lazy" src="' + it.image + '" alt="">'
+      ? '<img loading="lazy" src="' + it.image + '" alt="" onerror="this.remove()">'
       : '';
     return ''
       + '<a class="etr-card" href="' + (it.url||'#') + '" target="_blank" rel="noopener">'
