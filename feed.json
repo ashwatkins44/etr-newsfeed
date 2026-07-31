@@ -1,6 +1,16 @@
 {
-  "updated": "2026-07-31T20:22:31.513513+00:00",
+  "updated": "2026-07-31T22:52:34.793482+00:00",
   "items": [
+    {
+      "title": "Pats Patty's to Open in Grand Flamingo Centre",
+      "url": "https://whatnow.com/las-vegas/restaurants/pats-pattys-to-open-in-grand-flamingo-centre/",
+      "image": "https://whatnow.com/wp-content/uploads/2026/07/feture-1.jpg",
+      "source": "WhatNow Las Vegas",
+      "category": "News",
+      "blurb": "The Oklahoma-style Wagyu smash burger spot is opening a second location in Spring Valley's Grand Flamingo Centre.",
+      "date": "2026-07-31",
+      "sourceId": "C0BLJKA4YQP-1785536852.348319"
+    },
     {
       "title": "Downtown Vegas Bar Taps Into Conspiracy Theories for New Menu",
       "url": "https://neon.reviewjournal.com/bars/downtown-vegas-bar-taps-into-conspiracy-theories-for-new-menu-3339538/",
@@ -70,6 +80,16 @@
       "blurb": "Dancing Dumplings will open in Unit 15 of the Boca Park retail center.",
       "date": "2026-07-31",
       "sourceId": "C0BLJKA4YQP-1785518071.267719"
+    },
+    {
+      "title": "Valencian Gold Returns!!!",
+      "url": "https://www.eattalkrepeat.com/food4thought/valencian-gold-returns",
+      "image": "https://raw.githubusercontent.com/ashwatkins44/etr-newsfeed/main/images/valencian-gold.jpg",
+      "source": "Press Release",
+      "category": "News",
+      "blurb": "James Beard-nominated chef and restaurateur Jeffrey Weiss brings his celebrated Spanish restaurant concept back to Las Vegas.",
+      "date": "2026-07-29",
+      "sourceId": "C0BLJKA4YQP-1785538088.469639"
     }
   ]
 }
