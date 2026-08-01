@@ -1,10 +1,40 @@
 {
-  "updated": "2026-08-01T20:27:16.450602+00:00",
+  "updated": "2026-08-01T20:52:02.616885+00:00",
   "items": [
+    {
+      "title": "Japanese Cocktail Bar, Cobra Clutch, Opening Soon in the Arts District",
+      "url": "https://www.instagram.com/reel/DbexTnJwaF5/",
+      "image": "https://raw.githubusercontent.com/ashwatkins44/etr-newsfeed/main/images/cobra-clutch.jpg",
+      "source": "Instagram",
+      "category": "Openings",
+      "blurb": "",
+      "date": "2026-08-01",
+      "sourceId": "C0BLJKA4YQP-1785616410.170969"
+    },
+    {
+      "title": "Saintwood Bagels & Burgers Opening Fall 2026",
+      "url": "https://www.instagram.com/p/DbUaDzrFESV/",
+      "image": "https://raw.githubusercontent.com/ashwatkins44/etr-newsfeed/main/images/saintwood.jpg",
+      "source": "Instagram",
+      "category": "Openings",
+      "blurb": "",
+      "date": "2026-08-01",
+      "sourceId": "C0BLJKA4YQP-1785615503.448939"
+    },
+    {
+      "title": "The In Limbo Burgers Residency @ Petite Boheme is Ending",
+      "url": "https://www.instagram.com/p/DbenOVQhVot/",
+      "image": "https://raw.githubusercontent.com/ashwatkins44/etr-newsfeed/main/images/in-limbo.jpg",
+      "source": "Instagram",
+      "category": "Closings",
+      "blurb": "",
+      "date": "2026-08-01",
+      "sourceId": "C0BLJKA4YQP-1785615226.633489"
+    },
     {
       "title": "The Untapped Story: A Beer Tasting Experience",
       "url": "https://neon.reviewjournal.com/goguide/event-details/the-untapped-story-a-beer-tasting-experience--8111/?date=2026-08-03_19-00-00",
-      "image": "",
+      "image": "https://res.cloudinary.com/review-journal/image/upload/v1779912251/rj-project/event/uqatm3stzy4cmpunlszo.jpg",
       "source": "Las Vegas Review-Journal",
       "category": "Events",
       "blurb": "",
