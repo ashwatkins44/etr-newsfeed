@@ -139,6 +139,20 @@
     catch (e) { return ""; }
   }
 
+  // Empty-thumbnail placeholders: soft diagonal gradients drawn from the ETR site palette,
+  // assigned stably per card (each card keeps its gradient across reloads).
+  var PLACEHOLDERS = [
+    "linear-gradient(145deg, #d67a4d, #bd5230)", // rust (Dark 1)
+    "linear-gradient(145deg, #cba283, #b57d59)", // clay / camel (Bright 2 · Dark 2)
+    "linear-gradient(145deg, #b3d0d3, #96b8bd)", // dusty blue (Darkest 1)
+    "linear-gradient(145deg, #8a9fa0, #6c8485)"  // slate (Darkest 2)
+  ];
+  function phColor(it) {
+    var s = it.sourceId || it.url || it.title || "x", h = 0;
+    for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+    return PLACEHOLDERS[h % PLACEHOLDERS.length];
+  }
+
   function cardHTML(it) {
     var teaClass = it.category === "Spilled Tea" ? " tea" : "";
     var img = it.image
@@ -146,7 +160,7 @@
       : '';
     return ''
       + '<a class="etr-card" href="' + (it.url||'#') + '" target="_blank" rel="noopener">'
-      +   '<div class="etr-thumbwrap">' + img + '</div>'
+      +   '<div class="etr-thumbwrap" style="background:' + phColor(it) + '">' + img + '</div>'
       +   '<div class="etr-body">'
       +     '<div class="etr-meta">'
       +       (it.category ? '<span class="etr-tag' + teaClass + '">' + it.category + '</span>' : '')
