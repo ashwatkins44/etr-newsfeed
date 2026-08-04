@@ -18,8 +18,14 @@ NOTE: this is transcript recovery, which is inherently more brittle than a clean
 download. The robust long-term upgrade is a Slack bot/user token so the run can
 fetch url_private_download directly.
 """
-import sys, os, glob, json, base64, io
-from PIL import Image
+import sys, os, glob, json, base64, io, subprocess
+try:
+    from PIL import Image
+except ImportError:
+    # fresh scheduled sessions may not have Pillow; self-bootstrap it
+    subprocess.run([sys.executable, "-m", "pip", "install", "--quiet",
+                    "--break-system-packages", "pillow"], check=True)
+    from PIL import Image
 
 TARGET_W = 800      # feed cards render ~168px; 800 keeps it crisp on retina
 QUALITY  = 82
