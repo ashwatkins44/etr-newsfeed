@@ -24,12 +24,22 @@ if isinstance(cands, dict): cands = cands.get("items", [])
 seen = {it.get("sourceId") for it in feed.get("items", []) if it.get("sourceId")}
 seen |= {it.get("sourceId") for it in archive.get("items", []) if it.get("sourceId")}
 
+def norm_url(u):
+    return (u or "").strip().rstrip("/").lower()
+
+seen_urls = {norm_url(it.get("url")) for it in feed.get("items", []) if it.get("url")}
+seen_urls |= {norm_url(it.get("url")) for it in archive.get("items", []) if it.get("url")}
+
 added = []
 for c in cands:
     sid = c.get("sourceId")
     if sid and sid in seen:
         continue
+    u = norm_url(c.get("url"))
+    if u and u in seen_urls:
+        continue
     if sid: seen.add(sid)
+    if u: seen_urls.add(u)
     added.append(c)
 
 items = added + feed.get("items", [])
