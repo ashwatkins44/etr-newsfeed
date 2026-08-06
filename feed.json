@@ -2,16 +2,6 @@
   "updated": "2026-08-06T03:59:25.876246+00:00",
   "items": [
     {
-      "title": "Las Vegas bar's cocktail helps shelter animals find homes",
-      "url": "https://lasvegassun.com/news/2026/aug/03/las-vegas-bars-cocktail-helps-shelter-animals-find/",
-      "image": "https://media.lasvegassun.com/media/img/photos/2026/08/03/230220_Herathedog_Larsens-Pear-Martini_0202_t1200.jpg?a58a258a4dac404905303588401680fdf3ee23e4",
-      "source": "Las Vegas Sun",
-      "category": "News",
-      "blurb": "Stray Pirate has teamed up with Hera the Dog Vodka and the Nevada SPCA on a cocktail called Swig & Berries that helps shelter animals find homes.",
-      "date": "2026-08-05",
-      "sourceId": "manual-1754400000-stray-pirate"
-    },
-    {
       "title": "Las Vegas to Host the Inaugural MICHELIN Guide Southwest Ceremony",
       "url": "https://guide.michelin.com/us/en/event/las-vegas-to-host-inaugural-michelin-guide-southwest-ceremony",
       "image": "https://d3h1lg3ksw6i6b.cloudfront.net/media/image/2026/04/21/395da6d181f74446beb089237d2667e1_las-vegas-host-city-strip-lead.jpg",
@@ -160,6 +150,16 @@
       "blurb": "Sambalatte coffee shop in Boca Park will close August 27 after 16 years amid lease-renewal disagreements.",
       "date": "2026-08-03",
       "sourceId": "C0BLJKA4YQP-1785787263.517829"
+    },
+    {
+      "title": "Las Vegas bar's cocktail helps shelter animals find homes",
+      "url": "https://lasvegassun.com/news/2026/aug/03/las-vegas-bars-cocktail-helps-shelter-animals-find/",
+      "image": "https://media.lasvegassun.com/media/img/photos/2026/08/03/230220_Herathedog_Larsens-Pear-Martini_0202_t1200.jpg?a58a258a4dac404905303588401680fdf3ee23e4",
+      "source": "Las Vegas Sun",
+      "category": "News",
+      "blurb": "Stray Pirate has teamed up with Hera the Dog Vodka and the Nevada SPCA on a cocktail called Swig & Berries that helps shelter animals find homes.",
+      "date": "2026-08-03",
+      "sourceId": "manual-1754400000-stray-pirate"
     },
     {
       "title": "Slice The Italian Eatery Soft Opening on 8/3",
