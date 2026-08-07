@@ -1,0 +1,52 @@
+name: ETR News Sweep
+
+on:
+  schedule:
+    - cron: '0 12 * * *'
+    - cron: '9 16 * * *'
+    - cron: '11 18 * * *'
+    - cron: '23 21 * * *'
+    - cron: '47 0 * * *'
+    - cron: '19 4 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: etr-sweep
+  cancel-in-progress: false
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install --quiet requests pillow beautifulsoup4
+
+      - name: Run sweep + merge
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        run: |
+          python .github/scripts/etr_sweep.py
+          python update_feed.py
+          rm -f candidates.json
+
+      - name: Commit and push if the feed changed
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "ETR Feed Bot"
+            git config user.email "feed-bot@eattalkrepeat.com"
+            git add -A
+            git commit -m "Automated sweep: publish approved items"
+            git push
+            echo "Pushed feed changes."
+          else
+            echo "No new approved items — nothing to publish."
+          fi
