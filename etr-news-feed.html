@@ -14,7 +14,7 @@
      see exactly how it looks.
 
      CATEGORIES: News (umbrella) · Openings · Closings ·
-     Spilled Tea · Events. Items tagged "Openings" or "Closings"
+     Beyond Vegas · Events. Items tagged "Openings" or "Closings"
      also appear under the "News" filter automatically.
      ============================================================ -->
 
@@ -28,7 +28,7 @@
     --etr-muted:     #6f655c;
     --etr-line:      #e6dcc4;
     --etr-accent:    #c1552f;   /* ETR rust orange (matches the site) */
-    --etr-tea:       #a5468a;   /* accent for Spilled Tea items */
+    --etr-beyond:    #5f8385;   /* accent for Beyond Vegas items */
     --etr-radius:    16px;
     --etr-font:      -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 
@@ -90,7 +90,7 @@
     font-size:10.5px; padding:3px 8px; border-radius:6px;
     background: rgba(193,85,47,.12); color: var(--etr-accent);
   }
-  .etr-tag.tea { background: rgba(165,70,138,.14); color: var(--etr-tea); }
+  .etr-tag.beyond { background: rgba(95,131,133,.16); color: var(--etr-beyond); }
   .etr-source { color: var(--etr-muted); }
   .etr-dot { color: var(--etr-line); }
   #etr-feed-root .etr-h { font-family: var(--etr-font); font-size:17px; line-height:1.34; font-weight:800; color: var(--etr-ink); margin:0; }
@@ -124,7 +124,7 @@
   var PAGE_SIZE = 12;   // items rendered per batch ("Load more" adds another batch)
 
   // Fixed taxonomy. "News" is an umbrella that also matches Openings + Closings.
-  var TAXONOMY = ["All", "News", "Openings", "Closings", "Spilled Tea", "Events"];
+  var TAXONOMY = ["All", "News", "Openings", "Closings", "Beyond Vegas", "Events"];
   function matches(item, cat) {
     if (cat === "All")  return true;
     if (cat === "News") return ["News", "Openings", "Closings"].indexOf(item.category) !== -1;
@@ -154,7 +154,7 @@
   }
 
   function cardHTML(it) {
-    var teaClass = it.category === "Spilled Tea" ? " tea" : "";
+    var tagClass = it.category === "Beyond Vegas" ? " beyond" : "";
     var img = it.image
       ? '<img loading="lazy" src="' + it.image + '" alt="" onerror="this.remove()">'
       : '';
@@ -163,7 +163,7 @@
       +   '<div class="etr-thumbwrap" style="background:' + phColor(it) + '">' + img + '</div>'
       +   '<div class="etr-body">'
       +     '<div class="etr-meta">'
-      +       (it.category ? '<span class="etr-tag' + teaClass + '">' + it.category + '</span>' : '')
+      +       (it.category ? '<span class="etr-tag' + tagClass + '">' + it.category + '</span>' : '')
       +       '<span class="etr-source">' + (it.source||'') + '</span>'
       +       (it.date ? '<span class="etr-dot">&bull;</span><span class="etr-source">' + fmtDate(it.date) + '</span>' : '')
       +     '</div>'
@@ -235,7 +235,7 @@
     }
   }
 
-  // ====== SAMPLE DATA (remove once FEED_URL is live) ======
+  // ====== SAMPLE DATA (only shown in preview; FEED_URL is live) ======
   var SAMPLE_ITEMS = [
     { title:"Michelin-starred chef to open a late-night noodle counter on Spring Mountain",
       source:"Eater Vegas", category:"Openings", date:"2026-07-29",
@@ -253,9 +253,9 @@
       source:"Review-Journal", category:"News", date:"2026-07-25",
       blurb:"Two chefs and one bar program earned nods in this year's regional categories.",
       url:"#", image:"https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=60" },
-    { title:"Rumor mill: a certain celebrity steakhouse may be eyeing a second valley location",
-      source:"Slack tip", category:"Spilled Tea", date:"2026-07-24",
-      blurb:"Unconfirmed, but permits filed under a familiar LLC suggest something's cooking in Summerlin.",
+    { title:"A national dining trend and what it means for Las Vegas",
+      source:"Op-Ed", category:"Beyond Vegas", date:"2026-07-24",
+      blurb:"A look beyond the valley at where the restaurant industry is heading.",
       url:"#", image:"https://images.unsplash.com/photo-1600891964092-4316c288032e?w=400&q=60" }
   ];
 
