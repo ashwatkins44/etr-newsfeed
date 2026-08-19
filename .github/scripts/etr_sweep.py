@@ -94,7 +94,7 @@ def category_from_replies(replies):
     txt = " ".join((r.get("text") or "") for r in replies).lower()
     if re.search(r"\bopen(ing|ings|s|ed)?\b", txt): return "Openings"
     if re.search(r"\bclos(e|ed|ing|ings)\b", txt):  return "Closings"
-    if "spilled tea" in txt or "gossip" in txt or "rumor" in txt or re.search(r"\btea\b", txt): return "Spilled Tea"
+           if "beyond" in txt: return "Beyond Vegas"
     if re.search(r"\bevents?\b", txt): return "Events"
     return "News"
 
