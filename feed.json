@@ -1,6 +1,76 @@
 {
-  "updated": "2026-10-01T22:39:10.550326+00:00",
+  "updated": "2026-10-02T00:56:06.436546+00:00",
   "items": [
+    {
+      "title": "www.8newsnow.com",
+      "url": "https://www.8newsnow.com/news/local-news/this-las-vegas-eatery-made-yelps-top-25-new-restaurants-list/",
+      "image": "",
+      "source": "8newsnow.com",
+      "category": "News",
+      "blurb": "",
+      "date": "2026-10-01",
+      "sourceId": "C0BLJKA4YQP-1790895421.667149"
+    },
+    {
+      "title": "Luke Combs’ Category 10 announces Oct. 15 grand opening on Las Vegas Strip",
+      "url": "https://www.fox5vegas.com/2026/09/30/luke-combs-category-10-announces-oct-15-grand-opening-las-vegas-strip/",
+      "image": "https://gray-kvvu-prod.gtv-cdn.com/resizer/v2/U6P5N2YKDZETNI2HTKI2M37BJE.jpg?auth=386a979df7088835b32c11a02929a6bfb9caea93f5b460a751a2898c5af666c9&width=1200&height=600&smart=true",
+      "source": "https://www.fox5vegas.com",
+      "category": "Openings",
+      "blurb": "Luke Combs' Category 10 opens Oct. 15 at Flamingo Las Vegas. Check out opening weekend giveaways, live music, rooftop Strip views and Appalachian-style dining.",
+      "date": "2026-10-01",
+      "sourceId": "C0BLJKA4YQP-1790895773.529499"
+    },
+    {
+      "title": "New coffee shop to open in Las Vegas Arts District where a previous business closed",
+      "url": "https://www.fox5vegas.com/2026/10/01/new-coffee-shop-open-las-vegas-arts-district-where-previous-business-closed/",
+      "image": "https://gray-kvvu-prod.gtv-cdn.com/resizer/v2/23JOKNM42JEIDMTKE3CQWUOG4U.png?auth=719a725e540c434d3b6b65c65a90a50d0500b3cd581853d4fa783b4e0ad128c8&width=1200&height=600&smart=true",
+      "source": "https://www.fox5vegas.com",
+      "category": "Openings",
+      "blurb": "FOX5 previews Almond & Oats Coffee Bar, opening on South Casino Center Boulevard near a new parking garage in the Las Vegas Arts District.",
+      "date": "2026-10-01",
+      "sourceId": "C0BLJKA4YQP-1790895938.009659"
+    },
+    {
+      "title": "Upper crust: Metro Sliceteria elevates the by-the-slice pizza experience in Las Vegas",
+      "url": "https://lasvegasweekly.com/dining/2026/oct/01/upper-crust-metro-sliceteria-elevates-pizza/",
+      "image": "https://media.lasvegasweekly.com/img/photos/2026/09/30/20260925_lvw_METRO_SLICETERIA_selects_WV_08.jpg",
+      "source": "Las Vegas Weekly",
+      "category": "News",
+      "blurb": "The iconic local Metro Pizza's gourmet pies are available here by the slice, in a half-moon shaped cafeteria-style line that affords you a mouth-watering preview of everything on offer.",
+      "date": "2026-10-01",
+      "sourceId": "C0BLJKA4YQP-1790896138.226269"
+    },
+    {
+      "title": "How to eat the exciting new menu at Beauty & Essex on the Las Vegas Strip",
+      "url": "https://lasvegasweekly.com/dining/2026/oct/01/how-to-eat-the-exciting-new-menu-at-beauty-essex/",
+      "image": "https://media.lasvegasweekly.com/img/photos/2026/09/30/Grid.jpg",
+      "source": "Las Vegas Weekly",
+      "category": "News",
+      "blurb": "Beauty & Essex is celebrating 10 years since the opening of its Vegas outpost at the Cosmopolitan with what chef Chris Santos calls “the most ambitious menu change we’ve ever done.”",
+      "date": "2026-10-01",
+      "sourceId": "C0BLJKA4YQP-1790896261.998599"
+    },
+    {
+      "title": "neon.reviewjournal.com",
+      "url": "https://neon.reviewjournal.com/dining-out/gleaming-new-restaurant-opens-overlooking-las-vegas-strip-golf-course-3343466/",
+      "image": "",
+      "source": "neon.reviewjournal.com",
+      "category": "Openings",
+      "blurb": "",
+      "date": "2026-10-01",
+      "sourceId": "C0BLJKA4YQP-1790896931.379459"
+    },
+    {
+      "title": "neon.reviewjournal.com",
+      "url": "https://neon.reviewjournal.com/dining-out/mexican-restaurant-closes-after-five-years-at-downtown-summerlin-3343396/",
+      "image": "",
+      "source": "neon.reviewjournal.com",
+      "category": "Closings",
+      "blurb": "",
+      "date": "2026-10-01",
+      "sourceId": "C0BLJKA4YQP-1790897731.399759"
+    },
     {
       "title": "Bye-bye buffets: Your guide to Las Vegas food halls",
       "url": "https://neon.reviewjournal.com/dining-out/bye-bye-buffets-your-guide-to-las-vegas-food-halls-3343237/",
