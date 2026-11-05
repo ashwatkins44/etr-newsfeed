@@ -1,6 +1,56 @@
 {
-  "updated": "2026-11-05T12:28:01.498850+00:00",
+  "updated": "2026-11-05T19:47:43.616079+00:00",
   "items": [
+    {
+      "title": "www.8newsnow.com",
+      "url": "https://www.8newsnow.com/news/las-vegas-now/dominique-ansel-serves-up-holiday-pies-at-both-las-vegas-locations/",
+      "image": "",
+      "source": "8newsnow.com",
+      "category": "News",
+      "blurb": "",
+      "date": "2026-11-05",
+      "sourceId": "C0BLJKA4YQP-1793905660.068009"
+    },
+    {
+      "title": "The Las Vegas smashburger takeover continues with more must-try eateries",
+      "url": "https://lasvegasweekly.com/dining/2026/nov/05/vegas-smashburger-takeover-must-try-eateries/",
+      "image": "https://media.lasvegasweekly.com/img/photos/2026/11/05/food_sizzle_stack_burger_christopher_devargas.jpg",
+      "source": "Las Vegas Weekly",
+      "category": "News",
+      "blurb": "Here are three newer spots worth sinking your teeth into.",
+      "date": "2026-11-05",
+      "sourceId": "C0BLJKA4YQP-1793906199.250769"
+    },
+    {
+      "title": "Cooking from the heart: Cultural comfort food in Las Vegas",
+      "url": "https://lasvegasweekly.com/news/2026/nov/05/cooking-from-the-heart-cultural-comfort-food-vegas/",
+      "image": "https://media.lasvegasweekly.com/img/photos/2026/11/05/20261022_lvw_TALAMACAS_selects_WV_01.jpg",
+      "source": "Las Vegas Weekly",
+      "category": "News",
+      "blurb": "Even among the many generic strip malls lining our streets, you can find small restaurants serving dishes from all over the globe, each with its own distinct character.",
+      "date": "2026-11-05",
+      "sourceId": "C0BLJKA4YQP-1793907017.804999"
+    },
+    {
+      "title": "New neighborhood restaurant opening in southwest Las Vegas",
+      "url": "https://neon.reviewjournal.com/dining-out/new-neighborhood-restaurant-opening-in-southwest-las-vegas-3345420/",
+      "image": "https://neon.reviewjournal.com/wp-content/uploads/2026/11/22232509_web1_Hawthorne-Kitchen_SW-Las-Vegas_Exterior_Credit-Eugene-Dela-Cruz_ONeSeven-Agency.jpg",
+      "source": "Neon",
+      "category": "News",
+      "blurb": "The modern American menu features fish and chips, a Mediterranean lamb sandwich and, this being Vegas, a lavishly appointed hot fudge sundae.",
+      "date": "2026-11-05",
+      "sourceId": "C0BLJKA4YQP-1793907168.707129"
+    },
+    {
+      "title": "Viral Vegas bakery to move into downtown restaurant space",
+      "url": "https://neon.reviewjournal.com/dining-out/viral-vegas-bakery-to-move-into-downtown-restaurant-space-3345359/",
+      "image": "https://neon.reviewjournal.com/wp-content/uploads/2026/11/22262965_web1_LAS-VEGAS-BAKERY-SEP29-26_100126kc_008.jpg",
+      "source": "Neon",
+      "category": "News",
+      "blurb": "The bakery gained social media fame for its twist on a traditional Mexican pastry. Vegas Test Kitchen helped the culinary community survive the pandemic.",
+      "date": "2026-11-05",
+      "sourceId": "C0BLJKA4YQP-1793907208.823049"
+    },
     {
       "title": "Visually striking, $5.2M restaurant debuts near Las Vegas airport",
       "url": "https://neon.reviewjournal.com/dining-out/visually-striking-5-2m-restaurant-debuts-near-las-vegas-airport-3345301/",
