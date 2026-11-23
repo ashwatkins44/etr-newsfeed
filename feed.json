@@ -1,6 +1,46 @@
 {
-  "updated": "2026-11-23T14:49:25.165402+00:00",
+  "updated": "2026-11-23T23:42:59.764151+00:00",
   "items": [
+    {
+      "title": "One of the country’s top Chinese chefs moves to rival Strip casino",
+      "url": "https://neon.reviewjournal.com/dining-out/one-of-the-countrys-top-chinese-chefs-moves-to-rival-strip-casino-3346687/",
+      "image": "https://neon.reviewjournal.com/wp-content/uploads/2026/11/22322199_web1_Feng-Dan_Chef-Ming-Yu_Credit-Fontainebleau-Las-Vegas.jpg",
+      "source": "Neon",
+      "category": "News",
+      "blurb": "Feng Dan, his new restaurant, celebrates Cantonese fine dining; the menu includes a dish from the chef’s home area of Guangdong province in China.",
+      "date": "2026-11-23",
+      "sourceId": "C0BLJKA4YQP-1795468429.832469"
+    },
+    {
+      "title": "Fast-casual bowl restaurant finally sets opening date for Las Vegas location",
+      "url": "https://neon.reviewjournal.com/dining-out/fast-casual-bowl-restaurant-finally-sets-opening-date-for-las-vegas-location-3346701/",
+      "image": "https://neon.reviewjournal.com/wp-content/uploads/2026/11/22330343_web1_crop_Cava_Salad-Bowl_Credit-Cava.jpg",
+      "source": "Neon",
+      "category": "News",
+      "blurb": "The inaugural store of the fast-casual purveyor of bowls and other Mediterranean-inspired dishes will launch in Centennial Hills.",
+      "date": "2026-11-23",
+      "sourceId": "C0BLJKA4YQP-1795468467.895469"
+    },
+    {
+      "title": "Boca Park to get new restaurant — again.",
+      "url": "https://neon.reviewjournal.com/dining-out/replacement-in-the-works-for-italian-restaurant-in-boca-park-3346675/",
+      "image": "https://neon.reviewjournal.com/wp-content/uploads/2026/11/22322174_web1_CRYSANDRA-S_112226CS_001.jpg",
+      "source": "Neon",
+      "category": "News",
+      "blurb": "The new brunch and bubbles spot plans to open in March in the South Rampart Boulevard space.",
+      "date": "2026-11-23",
+      "sourceId": "C0BLJKA4YQP-1795468558.155149"
+    },
+    {
+      "title": "North Las Vegas brewery shuts after 5 years.",
+      "url": "https://neon.reviewjournal.com/dining-out/first-brewery-in-north-las-vegas-closes-after-5-years-3346649/",
+      "image": "https://neon.reviewjournal.com/wp-content/uploads/2026/11/22329563_web1_NLVBREW_102621ev_012.jpg",
+      "source": "Neon",
+      "category": "News",
+      "blurb": "Siblings opened the brewery and taproom in what had been the warehouse of their family’s company.",
+      "date": "2026-11-23",
+      "sourceId": "C0BLJKA4YQP-1795468629.149899"
+    },
     {
       "title": "Gritz Cafe to Open Inside The Good Word Social Club",
       "url": "https://whatnow.com/las-vegas/restaurants/gritz-cafe-to-open-inside-the-good-word-social-club/",
@@ -2960,26 +3000,6 @@
       "blurb": "A handmade pasta concept from chef Massimo Zaretti, opening in the former Squeeze In space at Apache Plaza.",
       "date": "2026-07-31",
       "sourceId": "C0BLJKA4YQP-1785519454.508639"
-    },
-    {
-      "title": "Dancing Dumplings, New Concept, Planned for Boca Park",
-      "url": "https://whatnow.com/las-vegas/restaurants/dancing-dumplings-new-concept-planned-for-boca-park/",
-      "image": "https://whatnow.com/wp-content/uploads/2026/07/thumbnail-1-5.jpeg",
-      "source": "WhatNow Las Vegas",
-      "category": "News",
-      "blurb": "Dancing Dumplings will open in Unit 15 of the Boca Park retail center.",
-      "date": "2026-07-31",
-      "sourceId": "C0BLJKA4YQP-1785518071.267719"
-    },
-    {
-      "title": "Valencian Gold Returns!!!",
-      "url": "https://www.eattalkrepeat.com/food4thought/valencian-gold-returns",
-      "image": "https://raw.githubusercontent.com/ashwatkins44/etr-newsfeed/main/images/valencian-gold.jpg",
-      "source": "Press Release",
-      "category": "News",
-      "blurb": "James Beard-nominated chef and restaurateur Jeffrey Weiss brings his celebrated Spanish restaurant concept back to Las Vegas.",
-      "date": "2026-07-29",
-      "sourceId": "C0BLJKA4YQP-1785538088.469639"
     }
   ]
 }
